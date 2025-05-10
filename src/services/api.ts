@@ -40,6 +40,9 @@ export const placeOrder = async (orderData: Omit<Order, 'id' | 'createdAt' | 'st
 export const getMenuItems = async (): Promise<MenuItem[]> => {
   try {
     const response = await fetch(`${API_URL}/menu-items`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
     return await response.json();
   } catch (error) {
     console.error('Error fetching menu items:', error);
@@ -50,6 +53,9 @@ export const getMenuItems = async (): Promise<MenuItem[]> => {
 export const getBookings = async (): Promise<Booking[]> => {
   try {
     const response = await fetch(`${API_URL}/bookings`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
     return await response.json();
   } catch (error) {
     console.error('Error fetching bookings:', error);
@@ -60,6 +66,9 @@ export const getBookings = async (): Promise<Booking[]> => {
 export const getOrders = async (): Promise<Order[]> => {
   try {
     const response = await fetch(`${API_URL}/orders`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
     return await response.json();
   } catch (error) {
     console.error('Error fetching orders:', error);

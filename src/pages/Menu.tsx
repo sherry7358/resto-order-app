@@ -16,8 +16,10 @@ const Menu = () => {
   const { data: menuItems, isLoading, isError } = useQuery({
     queryKey: ['menuItems'],
     queryFn: getMenuItems,
-    onError: () => {
-      toast.error('Failed to load menu items. Using fallback data.');
+    onSettled: (data, error) => {
+      if (error) {
+        toast.error('Failed to load menu items. Using fallback data.');
+      }
     }
   });
   
