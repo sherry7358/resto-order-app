@@ -56,7 +56,10 @@ app.post('/api/admin/login', (req, res) => {
   if (username === admin.username && password === admin.password) {
     res.json({ success: true });
   } else {
-    res.status(401).json({ success: false, message: 'Invalid credentials' });
+    res.status(401).json({ 
+      success: false, 
+      message: 'Invalid credentials. Please use username: admin, password: admin' 
+    });
   }
 });
 
