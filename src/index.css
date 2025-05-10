@@ -1,4 +1,5 @@
 
+@import "./styles/colors.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -87,11 +88,11 @@
   }
   
   .btn-secondary {
-    @apply bg-secondary text-text hover:bg-secondary/90 px-6 py-3 rounded-md font-medium transition-colors shadow-md hover:shadow-lg;
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-3 rounded-md font-medium transition-colors shadow-md hover:shadow-lg;
   }
   
   .btn-accent {
-    @apply bg-accent text-white hover:bg-accent/90 px-6 py-3 rounded-md font-medium transition-colors shadow-md hover:shadow-lg;
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 px-6 py-3 rounded-md font-medium transition-colors shadow-md hover:shadow-lg;
   }
 
   .section-heading {

@@ -1,0 +1,48 @@
+
+/* 
+ * Restaurant Theme Color Definitions 
+ * This file contains all color variables used throughout the application
+ */
+
+:root {
+  /* Primary Colors */
+  --color-primary: #FF6347; /* Main brand color, used for primary buttons, accents, and call to action elements */
+  --color-primary-hover: #E5574A; /* Darker version of primary for hover states */
+  --color-primary-foreground: #FFFFFF; /* Text color on primary background */
+  
+  /* Secondary Colors */
+  --color-secondary: #FFA07A; /* Used for secondary buttons and alternate accent elements */
+  --color-secondary-hover: #F08C69; /* Darker version of secondary for hover states */
+  --color-secondary-foreground: #333333; /* Text color on secondary background */
+  
+  /* Accent Colors */
+  --color-accent: #2E8B57; /* Used for highlighting specific elements, success indicators */
+  --color-accent-hover: #25774A; /* Darker version of accent for hover states */
+  --color-accent-foreground: #FFFFFF; /* Text color on accent background */
+  
+  /* Background Colors */
+  --color-background: #FFF8F0; /* Main background color of the application */
+  --color-card-bg: #FFFFFF; /* Background color for cards and elevated elements */
+  --color-glass-bg: rgba(255, 255, 255, 0.3); /* Background for glassmorphic elements */
+  
+  /* Text Colors */
+  --color-text: #333333; /* Main text color */
+  --color-text-secondary: #666666; /* Secondary text color for less emphasis */
+  --color-text-muted: #888888; /* Muted text for captions or less important content */
+  
+  /* Border Colors */
+  --color-border: rgba(0, 0, 0, 0.1); /* Standard border color */
+  --color-border-light: rgba(255, 255, 255, 0.2); /* Light border for glassmorphic elements */
+  
+  /* Utility Colors */
+  --color-success: #4CAF50; /* Success messages and indicators */
+  --color-warning: #FFC107; /* Warning messages and indicators */
+  --color-error: #F44336; /* Error messages and indicators */
+  --color-info: #2196F3; /* Information messages and indicators */
+  
+  /* Shadow Colors */
+  --color-shadow: rgba(0, 0, 0, 0.1); /* Standard shadow color */
+  --color-shadow-dark: rgba(0, 0, 0, 0.2); /* Darker shadow for higher elevation */
+}
+
+/* CSS Custom Properties for dark mode can be added here in the future */
