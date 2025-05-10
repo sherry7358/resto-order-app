@@ -1,5 +1,5 @@
 
-import { Booking, Order } from '../types';
+import { Booking, MenuItem, Order } from '../types';
 
 const API_URL = '/api';
 
@@ -34,6 +34,16 @@ export const placeOrder = async (orderData: Omit<Order, 'id' | 'createdAt' | 'st
   } catch (error) {
     console.error('Error placing order:', error);
     return { success: false };
+  }
+};
+
+export const getMenuItems = async (): Promise<MenuItem[]> => {
+  try {
+    const response = await fetch(`${API_URL}/menu-items`);
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching menu items:', error);
+    throw error;
   }
 };
 

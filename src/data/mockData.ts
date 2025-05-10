@@ -7,7 +7,7 @@ export const menuItems: MenuItem[] = [
     name: "Crispy Calamari",
     description: "Tender calamari rings, lightly breaded and fried, served with lemon aioli",
     price: 12.99,
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+    image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     category: "appetizers"
   },
   {
@@ -15,7 +15,7 @@ export const menuItems: MenuItem[] = [
     name: "Bruschetta",
     description: "Toasted bread topped with fresh tomatoes, basil and garlic",
     price: 9.99,
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    image: "https://images.unsplash.com/photo-1572695157335-daab09de6668?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     category: "appetizers"
   },
   {
@@ -23,7 +23,7 @@ export const menuItems: MenuItem[] = [
     name: "Beef Wellington",
     description: "Tenderloin wrapped in puff pastry with mushroom duxelles",
     price: 34.99,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     category: "mains"
   },
   {
@@ -31,7 +31,7 @@ export const menuItems: MenuItem[] = [
     name: "Grilled Salmon",
     description: "Fresh salmon fillet with lemon butter sauce and seasonal vegetables",
     price: 28.99,
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+    image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     category: "mains"
   },
   {
@@ -39,7 +39,7 @@ export const menuItems: MenuItem[] = [
     name: "Mushroom Risotto",
     description: "Creamy arborio rice with wild mushrooms and parmesan",
     price: 19.99,
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+    image: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     category: "mains"
   },
   {
@@ -47,7 +47,7 @@ export const menuItems: MenuItem[] = [
     name: "Tiramisu",
     description: "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream",
     price: 8.99,
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     category: "desserts"
   },
   {
@@ -55,7 +55,7 @@ export const menuItems: MenuItem[] = [
     name: "Chocolate Lava Cake",
     description: "Warm chocolate cake with a molten center, served with vanilla ice cream",
     price: 9.99,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+    image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     category: "desserts"
   },
   {
@@ -63,7 +63,7 @@ export const menuItems: MenuItem[] = [
     name: "House Red Wine",
     description: "Glass of our signature red blend",
     price: 11.99,
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     category: "drinks"
   },
   {
@@ -71,7 +71,7 @@ export const menuItems: MenuItem[] = [
     name: "Craft Mojito",
     description: "Refreshing cocktail with rum, lime, mint, and soda",
     price: 13.99,
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+    image: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     category: "drinks"
   }
 ];

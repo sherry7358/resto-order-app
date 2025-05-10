@@ -1,22 +1,36 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { menuItems } from '../data/mockData';
+import { useQuery } from '@tanstack/react-query';
 import MenuSection from '../components/MenuSection';
 import MenuFilter from '../components/MenuFilter';
 import { motion } from 'framer-motion';
+import { Loader2 } from 'lucide-react';
+import { getMenuItems } from '../services/api';
+import { menuItems as fallbackMenuItems } from '../data/mockData';
+import { toast } from "sonner";
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [isLoaded, setIsLoaded] = useState(false);
   
+  const { data: menuItems, isLoading, isError } = useQuery({
+    queryKey: ['menuItems'],
+    queryFn: getMenuItems,
+    onError: () => {
+      toast.error('Failed to load menu items. Using fallback data.');
+    }
+  });
+  
+  const items = menuItems || fallbackMenuItems;
+  
   const categories = useMemo(() => {
-    return Array.from(new Set(menuItems.map(item => item.category)));
-  }, []);
+    return Array.from(new Set(items.map(item => item.category)));
+  }, [items]);
   
   const filteredItems = useMemo(() => {
-    if (activeCategory === 'all') return menuItems;
-    return menuItems.filter(item => item.category === activeCategory);
-  }, [activeCategory]);
+    if (activeCategory === 'all') return items;
+    return items.filter(item => item.category === activeCategory);
+  }, [activeCategory, items]);
   
   useEffect(() => {
     setIsLoaded(true);
@@ -59,17 +73,24 @@ const Menu = () => {
           />
         </motion.div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: isLoaded ? 1 : 0, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-        >
-          <MenuSection 
-            title={activeCategory === 'all' ? 'All Items' : activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1)} 
-            items={filteredItems}
-            viewAll={true} 
-          />
-        </motion.div>
+        {isLoading ? (
+          <div className="flex justify-center items-center h-64">
+            <Loader2 className="w-8 h-8 animate-spin text-primary" />
+            <span className="ml-2">Loading menu items...</span>
+          </div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: isLoaded ? 1 : 0, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            <MenuSection 
+              title={activeCategory === 'all' ? 'All Items' : activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1)} 
+              items={filteredItems}
+              viewAll={true} 
+            />
+          </motion.div>
+        )}
       </motion.div>
     </div>
   );
