@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { toast } from "sonner";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
+import { AlertTriangle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Admin = () => {
@@ -61,7 +61,7 @@ const Admin = () => {
             className="mb-4"
           >
             <Alert variant="destructive" className="border-red-300 bg-red-50">
-              <ExclamationTriangleIcon className="h-4 w-4" />
+              <AlertTriangle className="h-4 w-4" />
               <AlertDescription>
                 Invalid credentials. Please try again.
               </AlertDescription>
