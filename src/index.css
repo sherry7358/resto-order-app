@@ -83,15 +83,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90 px-6 py-3 rounded-md font-medium transition-colors;
+    @apply bg-primary text-white hover:bg-primary/90 px-6 py-3 rounded-md font-medium transition-colors shadow-md hover:shadow-lg;
   }
   
   .btn-secondary {
-    @apply bg-secondary text-text hover:bg-secondary/90 px-6 py-3 rounded-md font-medium transition-colors;
+    @apply bg-secondary text-text hover:bg-secondary/90 px-6 py-3 rounded-md font-medium transition-colors shadow-md hover:shadow-lg;
   }
   
   .btn-accent {
-    @apply bg-accent text-white hover:bg-accent/90 px-6 py-3 rounded-md font-medium transition-colors;
+    @apply bg-accent text-white hover:bg-accent/90 px-6 py-3 rounded-md font-medium transition-colors shadow-md hover:shadow-lg;
   }
 
   .section-heading {
@@ -99,10 +99,56 @@
   }
   
   .menu-card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-[1.02];
+    @apply rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-4px];
   }
 
   .input-field {
     @apply w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-white;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-md bg-white/30 border border-white/20 rounded-xl shadow-lg;
+  }
+  
+  .glass-button {
+    @apply backdrop-blur-md bg-white/20 hover:bg-white/40 border border-white/30 transition-colors;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface MenuFilterProps {
   categories: string[];
@@ -13,26 +14,32 @@ const MenuFilter: React.FC<MenuFilterProps> = ({
   onSelectCategory,
 }) => {
   return (
-    <div className="mb-8">
+    <div className="mb-8 backdrop-blur-sm bg-white/30 p-6 rounded-xl shadow-lg border border-white/20">
       <h3 className="text-lg font-medium mb-4">Categories</h3>
       <div className="flex flex-wrap gap-2">
-        <button
-          className={`px-4 py-2 rounded-full border border-gray-300 
-            ${activeCategory === 'all' ? 'bg-primary text-white' : 'bg-white text-text hover:bg-gray-100'}`}
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          className={`px-4 py-2 rounded-full border backdrop-blur-sm shadow-sm
+            ${activeCategory === 'all' ? 'bg-primary text-white border-primary/50' : 'bg-white/50 text-text hover:bg-white/70 border-white/40'}`}
           onClick={() => onSelectCategory('all')}
         >
           All
-        </button>
+        </motion.button>
         
         {categories.map((category) => (
-          <button
+          <motion.button
             key={category}
-            className={`px-4 py-2 rounded-full border border-gray-300 capitalize
-              ${activeCategory === category ? 'bg-primary text-white' : 'bg-white text-text hover:bg-gray-100'}`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            className={`px-4 py-2 rounded-full border backdrop-blur-sm shadow-sm capitalize
+              ${activeCategory === category ? 'bg-primary text-white border-primary/50' : 'bg-white/50 text-text hover:bg-white/70 border-white/40'}`}
             onClick={() => onSelectCategory(category)}
           >
             {category}
-          </button>
+          </motion.button>
         ))}
       </div>
     </div>
